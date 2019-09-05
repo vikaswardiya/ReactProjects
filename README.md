@@ -1,2 +1,2 @@
 # ReactProjects
-React Projects are stored in it
+All the react projects are stored in it.
