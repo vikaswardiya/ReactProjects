@@ -1,4 +1,4 @@
-const initstate ={users:[]} 
+const initstate ={users:[],Seachusers:[]} 
   
   const userReducer = (state = initstate, action) => {
     switch (action.type) {
@@ -6,8 +6,11 @@ const initstate ={users:[]}
           console.log("user reducer ",state,action)
           let users = state.users.map(a => {return {...a}})
           users.push(action.action)
+         
         return{
+          ...state,
             users
+           
         }
       }
       case 4:{
@@ -16,11 +19,21 @@ const initstate ={users:[]}
           action.action.forEach(d=>{
             users.push(d);
           })
-          
+          let Seachusers=[...users];
           return{
-              users
+            ...state,
+              users,
+              Seachusers
           }
       }
+    case 5:{
+      console.log("searhc action",action);
+      let Seachusers = action.action.map(a => {return {...a}})
+return{
+  ...state,
+  Seachusers
+}
+    }
       default:
         return {
           ...state

@@ -14,6 +14,11 @@
   padding-bottom: 1.5em;
 }
 
+input{
+  width: 100%;
+    border-radius: 1px;
+}
+
 .purchase-card>.grid {
   margin: 1.5em;
   border-bottom-style: groove;

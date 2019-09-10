@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
+import SearchBox from '../container/Searchbox';
 
 const Userlist = props => {
-  console.log("porps", props.userReducer.users, props);
-  const user_List = props.userReducer.users.map(user => {
+  console.log("porps", props.userReducer.Seachusers, props);
+  const user_List = props.userReducer.Seachusers.map(user => {
     return (
       <div className="" key={user.id}>
         <div className="grid">
@@ -16,6 +17,7 @@ const Userlist = props => {
   return (
     <div className="purchase-card">
       <h2>User List</h2>
+      <SearchBox />
       {user_List}
     </div>
   );

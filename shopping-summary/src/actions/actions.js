@@ -23,13 +23,26 @@ export const RegisterUser = props => {
 };
 
 export const getuserHandler = props => (dispatch, getState) => {
-    const ei=data.getData('https://jsonplaceholder.typicode.com/users/').then(res=>{
+    data.getData('https://jsonplaceholder.typicode.com/users/').then(res=>{
     console.log("res",res);
     dispatch({
         type: 4,
         action:res
     });
 });
+}
+
+
+export const SearchHandler =(e)=>(dispatch,getState)=>{
+console.log("Search box",e.target.value,"getState():",getState().userReducer);
+const users=getState().userReducer.users.filter(user=>{
+  return user.username.toLowerCase().indexOf(e.target.value.toLowerCase())> -1;
+})
+//const searchvalue=e.target.value;
+dispatch({
+  type:5,
+  action:users
+})
 }
 
 export const formsubmitHandler = props => (dispatch, getState) => {
