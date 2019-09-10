@@ -10,6 +10,17 @@ const initstate ={users:[]}
             users
         }
       }
+      case 4:{
+          console.log("response data",state,action);
+          let users = state.users.map(a => {return {...a}})
+          action.action.forEach(d=>{
+            users.push(d);
+          })
+          
+          return{
+              users
+          }
+      }
       default:
         return {
           ...state

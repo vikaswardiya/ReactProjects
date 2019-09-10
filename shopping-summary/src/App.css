@@ -13,3 +13,16 @@
 .purchase-card>.show-grid {
   padding-bottom: 1.5em;
 }
+
+.purchase-card>.grid {
+  margin: 1.5em;
+  border-bottom-style: groove;
+}
+
+h2{
+  color:rgba(27, 31, 18, 0.8);
+  text-align: center;
+  
+
+
+}

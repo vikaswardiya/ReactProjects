@@ -1,3 +1,6 @@
+import * as data from '../api/api';
+
+
 export const authenticated = customername => {
   return {
     type: 1,
@@ -19,8 +22,18 @@ export const RegisterUser = props => {
   };
 };
 
+export const getuserHandler = props => (dispatch, getState) => {
+    const ei=data.getData('https://jsonplaceholder.typicode.com/users/').then(res=>{
+    console.log("res",res);
+    dispatch({
+        type: 4,
+        action:res
+    });
+});
+}
+
 export const formsubmitHandler = props => (dispatch, getState) => {
-  console.log("getState()", getState(),"props",props);
+  console.log("getState()", getState(),"props",props); 
   const { customername, password, confirmpassword } = props;
   password === confirmpassword
     ? dispatch(authenticated(customername))
