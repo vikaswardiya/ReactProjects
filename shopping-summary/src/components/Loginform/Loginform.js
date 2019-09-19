@@ -14,8 +14,13 @@ class Loginform extends Component {
 
   OnFromSubmit = e => {
     e.preventDefault();
-    console.log("this state",this.state);
+    console.log("this state", this.state);
     this.props.OnFromSubmit(this.state);
+  };
+
+  signupform = () => {
+    console.log("toglle");
+    this.props.toggle();
   };
 
   render() {
@@ -62,7 +67,8 @@ class Loginform extends Component {
               ></input>
             </Col>
           </Row>
-          <button type="submit">Submit Form</button>
+          <button type="submit">Login Form</button>
+          <a onClick={this.signupform} className="btn">SignUP</a>
         </form>
       </div>
     );

@@ -2,32 +2,76 @@
   margin-top: 10px;
 }
 
+body {
+  background-color: rgba(60, 148, 23, 0.575);
+}
+
 .purchase-card {
-  float:left;
-  margin:1em;
+  color: floralwhite;
+  border-radius: 4px;
+  background-color: #094149;
+  float: left;
+  margin: 1em;
   width: 350px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 1em;
 }
 
-.purchase-card>.show-grid {
+.purchase-card > .show-grid {
   padding-bottom: 1.5em;
 }
 
-input{
-  width: 100%;
-    border-radius: 1px;
+select{
+  padding: 1px;
+    margin: 1px;
+    width:100%;
 }
 
-.purchase-card>.grid {
+.right {
+  background-color: #811840;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-top: 3px;
+  float: right;
+  width: 25%;
+  color:whitesmoke;
+}
+
+.cancelbtn {
+  border-radius: 2px;
+  color: white;
+  float: right;
+  margin: 1px;
+  padding: 2px;
+  background-color: #0c5460;
+}
+
+input {
+  margin: 1px;
+  padding: 1px;
+  width: 100%;
+  border-radius: 1px;
+}
+
+button {
+  background-color: #0c5460;
+  border-color: rgba(0, 123, 255, 0.5);
+  color: white;
+}
+
+.btn {
+  /* border-color: rgba(0,123,255,.5); */
+  padding: 1px;
+  margin: 1px;
+  /* color: white !important; */
+}
+.purchase-card > .grid {
   margin: 1.5em;
   border-bottom-style: groove;
 }
 
-h2{
-  color:rgba(27, 31, 18, 0.8);
+h2 {
+  color: rgba(27, 31, 18, 0.8);
   text-align: center;
-  
-
-
 }

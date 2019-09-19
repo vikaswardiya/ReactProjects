@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { SearchHandler } from "../actions/actions";
+import { SearchHandler } from "../actions/listactions";
 
 const SearchBox = ({ SearchHandler }) => {
   return (

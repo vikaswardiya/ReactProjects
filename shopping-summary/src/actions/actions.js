@@ -1,4 +1,3 @@
-import * as data from '../api/api';
 
 
 export const authenticated = customername => {
@@ -7,6 +6,25 @@ export const authenticated = customername => {
     action: { customername }
   };
 };
+
+
+export const handleChangeAction = data => (dispatch, getState) => {
+  dispatch({ type: "ONCHANGE", action: data });
+};
+
+
+export const updatedata = data => (dispatch, getState) => {
+  let Seachusers = getState().userReducer.Seachusers.map(user => {
+    return user.id === data.id ? data : user;
+  });
+
+  return dispatch({
+    type: "UPDATE_USERS",
+    action: Seachusers
+  });
+};
+
+
 
 export const notauthenticated = ({ customername }) => {
   return {
@@ -22,39 +40,18 @@ export const RegisterUser = props => {
   };
 };
 
-export const getuserHandler = props => (dispatch, getState) => {
-    data.getData('https://jsonplaceholder.typicode.com/users/').then(res=>{
-    console.log("res",res);
-    dispatch({
-        type: 4,
-        action:res
-    });
-});
-}
 
-
-export const SearchHandler =(e)=>(dispatch,getState)=>{
-console.log("Search box",e.target.value,"getState():",getState().userReducer);
-const users=getState().userReducer.users.filter(user=>{
-  return user.username.toLowerCase().indexOf(e.target.value.toLowerCase())> -1;
-})
-//const searchvalue=e.target.value;
-dispatch({
-  type:5,
-  action:users
-})
-}
 
 export const formsubmitHandler = props => (dispatch, getState) => {
-  console.log("getState()", getState(),"props",props); 
   const { customername, password, confirmpassword } = props;
   password === confirmpassword
     ? dispatch(authenticated(customername))
     : dispatch(notauthenticated({ customername: "" }));
 };
 
+
+
 export const formsSignUpHandler = props => (dispatch, getState) => {
-  console.log("SignUp form", props);
   const { password, confirmpassword } = props;
   password === confirmpassword
     ? dispatch(RegisterUser(props))

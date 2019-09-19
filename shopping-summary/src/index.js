@@ -6,12 +6,14 @@ import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import rootReducer from "./Reducers/rootReducer";
 import userReducer from "./Reducers/userReducer";
+import editReducer from './Reducers/editReducer';
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import * as formsmethods from "./actions/actions";
+import * as formsmethods from "./actions/listactions";
 const allreducers = combineReducers({
   rootReducer,
-  userReducer
+  userReducer,
+  editReducer
 });
 
 const store = createStore(allreducers, applyMiddleware(thunk));

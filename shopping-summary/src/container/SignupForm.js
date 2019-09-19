@@ -3,22 +3,29 @@ import { connect } from "react-redux";
 import Wellcome from "../container/Wellcome";
 import * as formsmethods from "../actions/actions";
 import Signupform from "../components/Signupform/Signupform";
+
+
 import { bindActionCreators } from "redux";
 
+
 const SignupFormcontainer = props => {
-    console.log("Sign Up Form",props);
+  console.log("props",props);
   const SignupFormdiv = props.isAuthenticated ? null : (
     <div className="purchase-card">
       <Signupform OnFromSubmit={state => props.formsSignUpHandler(state)} />
       <Wellcome />
     </div>
   );
+  
+  const toggleform=props.TOGGLE?(SignupFormdiv):(null)
 
-  return <div>{SignupFormdiv}</div>;
+
+  return <div>{toggleform}</div>;
 };
 
 const mapStateToProps = state => ({
-      ...state.rootReducer    
+      ...state.rootReducer,
+      ...state.userReducer    
   });
 
 const mapDispatchToProps = dispatch => {
